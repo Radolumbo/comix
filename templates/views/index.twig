@@ -1,0 +1,13 @@
+{% extends "../layouts/default.twig" %}
+
+{% block content %}
+	<div class="container">
+		<div class="jumbotron">
+			{% if (user is defined) and (user.canAccessKeystone) %}
+				<p>
+					<a href="/keystone" class="btn btn-lg btn-primary">Open the Admin UI</a>
+				</p>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

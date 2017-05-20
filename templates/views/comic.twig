@@ -1,0 +1,8 @@
+{% extends "../layouts/default.twig" %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{data.comic.title}}</h1>
+        <img src="{{data.comic.image.url}}" class="img-responsive">
+    </div>
+{% endblock %}

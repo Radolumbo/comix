@@ -1,0 +1,15 @@
+{% extends "../layouts/default.twig" %}
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron">
+            {% for comic in comics %}
+                <p>
+                    <div>
+                        <h2><a href="/comics/{{ comic.comic_num }}"> {{ comic.title }}</a></h2>
+                    </div>
+                </p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
