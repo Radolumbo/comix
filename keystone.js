@@ -30,7 +30,8 @@ keystone.init({
 });
 
 //Set the cloudinary instance for image management
-keystone.set('cloudinary config', { cloud_name: 'du9xmm6rh', api_key: '949139935943433', api_secret: '18jUQLOuJCGj9Reah1vCYpexOGg' });
+keystone.set('cloudinary config', process.env.CLOUDINARY_URL);
+keystone.set('cookie secret', process.env.COOKIE_SECRET);
 
 // Load your project's Models
 keystone.import('models');
