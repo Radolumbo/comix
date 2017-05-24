@@ -5,7 +5,10 @@ var Types = keystone.Field.Types;
  * User Model
  * ==========
  */
-var Comic = new keystone.List('Comic');
+var Comic = new keystone.List('Comic', {
+    autokey: { from: 'comic_num', path: 'slug', unique: true},
+    defaultSort: '-publish_date'
+});
 
 Comic.add({
     title: { type: Types.Text, required: true, initial: true },

@@ -22,8 +22,22 @@ exports = module.exports = function(req,res) {
 
             locals.data.comic = result;
 
-            next(err);
+            if(err){
+                //crap
+            }
+            else{
+                var q2 = keystone.list('Comic').model.findOne().sort('-comic_num')
+
+                q2.exec(function(err, result){
+                    locals.data.max_comic_num = result.comic_num;
+                    console.log(result.comic_num);
+                    next(err);
+                });
+            }
         });
+
+
+        
 
     });
 
