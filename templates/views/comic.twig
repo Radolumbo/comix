@@ -8,8 +8,8 @@
         </div>
         <div class="below-comic">
             <span>
-                <a href="{% if data.comic and data.comic.comic_num > 1 %}/comics/{{data.comic.comic_num-1}}{% endif %}"><img src="http://res.cloudinary.com/du9xmm6rh/image/upload/v1517541047/pencil-left_uiy2fs.gif" class="img-responsive arrow" id="arrow-left"></a>
-                <a href="{% if data.comic and data.comic.comic_num < data.max_comic_num %}/comics/{{data.comic.comic_num+1}}{% endif %}"><img src="http://res.cloudinary.com/du9xmm6rh/image/upload/v1517541047/pencil-right_vuxbdy.gif" class="img-responsive arrow" id="arrow-right"></a>
+                {% if data.comic and data.comic.comic_num > 1 %}<a href="/comics/{{data.comic.comic_num-1}}"><img src="http://res.cloudinary.com/du9xmm6rh/image/upload/v1517541047/pencil-left_uiy2fs.gif" class="img-responsive arrow" id="arrow-left"></a>{% endif %}
+                {% if data.comic and data.comic.comic_num < data.max_comic_num %}<a href="/comics/{{data.comic.comic_num+1}}"><img src="http://res.cloudinary.com/du9xmm6rh/image/upload/v1517541047/pencil-right_vuxbdy.gif" class="img-responsive arrow" id="arrow-right"></a>{% endif %}
             </span>
         </div>
 
