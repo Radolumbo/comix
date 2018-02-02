@@ -1,6 +1,27 @@
 .below-comic{
     display:inline-block;
+    width: 100%;
+    margin:auto;
 }
-.arrow{
+.arrow-img{
     display:inline-block;
+}
+
+.the-comic{
+    display:inline-block;
+    margin: auto;
+    width:100%;
+}
+.img-comic{
+	margin:auto;
+	max-width: 75%;
+  	height: auto;
+}
+
+#arrow-left{
+	float:left;
+}
+
+#arrow-right{
+	float:right;
 }

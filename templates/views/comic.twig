@@ -3,14 +3,38 @@
 {% block content %}
     <div class="container">
         <h1>{{data.comic.title}}</h1>
-        <img src="{{data.comic.image.url}}" class="img-responsive">
+        <div class="the-comic">
+            <img src="{{data.comic.image.url}}" class="img-responsive img-comic">
+        </div>
         <div class="below-comic">
             <span>
-                <a href="/comics/{% if data.comic and data.comic.comic_num > 1 %}{{data.comic.comic_num-1}}{% endif %}"><img src="http://res.cloudinary.com/du9xmm6rh/image/upload/v1495586633/left_fric0x.png" class="img-responsive arrow"></a>
-                <span style='width:500px;display:inline-block'></span>
-                <a href="/comics/{% if data.comic and data.comic.comic_num < data.max_comic_num %}{{data.comic.comic_num+1}}{% endif %}"><img src="http://res.cloudinary.com/du9xmm6rh/image/upload/v1495586633/right_xr6jwb.png" class="img-responsive arrow"></a>
+                <a href="{% if data.comic and data.comic.comic_num > 1 %}/comics/{{data.comic.comic_num-1}}{% endif %}"><img src="http://res.cloudinary.com/du9xmm6rh/image/upload/v1495586633/left_fric0x.png" class="img-responsive arrow" id="arrow-left"></a>
+                <a href="{% if data.comic and data.comic.comic_num < data.max_comic_num %}/comics/{{data.comic.comic_num+1}}{% endif %}"><img src="http://res.cloudinary.com/du9xmm6rh/image/upload/v1495586633/right_xr6jwb.png" class="img-responsive arrow" id="arrow-right"></a>
             </span>
         </div>
 
     </div>
+
+    <script>
+    window.addEventListener("keydown", function (event) {
+        if (event.defaultPrevented) {
+            return; // Do nothing if the event was already processed
+        }
+
+        switch (event.key) {
+            case "ArrowLeft":
+                document.getElementById('arrow-left').click()
+                break;
+            case "ArrowRight":
+                document.getElementById('arrow-right').click()
+                break;
+            default:
+                return; // Quit when this doesn't handle the key event.
+            }
+
+            // Cancel the default action to avoid it being handled twice
+            event.preventDefault();
+        }, true);
+
+    </script>
 {% endblock %}
