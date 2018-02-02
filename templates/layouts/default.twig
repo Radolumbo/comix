@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>{{ title|default("comix") }}</title>
+		<title>{{ title|default("Sketchy Comix") }}</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link href="/styles/site.css" rel="stylesheet">
 		<link href="/styles/comic.css" rel="stylesheet">
@@ -64,9 +64,9 @@
 			{{ FlashMessages.renderMessages(messages) }}
 			{% block content %}{% endblock %}
 		</div>
-		<div id="footer" class="container">
+		<!--<div id="footer" class="container">
 			<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
-		</div>
+		</div>-->
 		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
 		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
 		{% if (user is defined) and (user.canAccessKeystone) %}

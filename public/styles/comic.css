@@ -2,9 +2,12 @@
     display:inline-block;
     width: 100%;
     margin:auto;
+    padding:0px;
 }
-.arrow-img{
+.arrow{
     display:inline-block;
+    height: auto;
+    max-width: 15%
 }
 
 .the-comic{
@@ -16,6 +19,8 @@
 	margin:auto;
 	max-width: 75%;
   	height: auto;
+    border-style: solid;
+    border-width: 2px;
 }
 
 #arrow-left{
@@ -24,4 +29,9 @@
 
 #arrow-right{
 	float:right;
+}
+
+body{
+	background-image: url("http://th00.deviantart.net/fs70/PRE/i/2011/006/d/b/wrinkled_paper_texture__by_christianluannstock-d36jws6.png");
+	background-size:cover;
 }
